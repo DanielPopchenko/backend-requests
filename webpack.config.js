@@ -30,6 +30,7 @@ module.exports = {
           name: `[name].[ext]`,
         },
       },
+      { test: /\.handlebars$/, loader: 'handlebars-loader' },
     ],
   },
   plugins: [

@@ -1,1 +1,4 @@
 # webpackProject
+
+- newsApi
+- pixaby
