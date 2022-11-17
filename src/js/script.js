@@ -34,6 +34,7 @@ import updateArticlesMarkup from './update-articles-markup';
 const refs = {
   articlesContainer: document.querySelector('.js-articles'),
   searchForm: document.querySelector('.js-search-form'),
+  images: document.querySelectorAll('.img'),
 };
 
 refs.searchForm.addEventListener('submit', event => {
@@ -45,36 +46,3 @@ refs.searchForm.addEventListener('submit', event => {
   form.reset();
   fetchArticles(inputVal).then(updateArticlesMarkup);
 });
-
-// // значения свойства X-Api-Key, наш ключ.
-// const apiKey = 'b1a504b7e2f64b11a7d5f6f7e58b2bf8';
-// const url = `https://newsapi.org/v2/everything?q=bitcoin&language=en`;
-
-// // Обьект настроек
-// const options = {
-//   headers: {
-//     /**
-//      * Авторизируемся с помощью заголовка X-Api-Key вместо apiKey
-//      */
-//     'X-Api-Key': apiKey,
-//   },
-// };
-
-// const makeListMarkup = ({ url, title }) => {
-//   return `
-//   <li class="galery-item">
-//       <a href="${url}"/>${title}</a>
-//     </li>
-//   `;
-// };
-
-// fetch(url, options)
-//   .then(res => res.json())
-//   .then(({ articles }) => {
-//     // ({articles}) - Деструктуризация обьекта
-//     const makeEachItemMarkup = articles.map(makeListMarkup).join('');
-//     refs.articlesContainer.insertAdjacentHTML(
-//       'beforeend',
-//       makeEachItemMarkup
-//     );
-//   });
